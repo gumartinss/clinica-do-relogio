@@ -70,4 +70,36 @@ document.addEventListener('DOMContentLoaded', () => {
       window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank', 'noopener');
     });
   }
+
+  const sellForm = document.getElementById('sellForm');
+  if (sellForm) {
+    sellForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const nome = sellForm.nome.value.trim();
+      const telefone = sellForm.telefone.value.trim();
+      const marca = sellForm.marca.value.trim();
+      const modelo = sellForm.modelo.value.trim();
+      const estado = sellForm.estado.value;
+      const acompanha = sellForm.acompanha.value;
+      const valor = sellForm.valor.value.trim();
+      const observacoes = sellForm.observacoes.value.trim();
+
+      const lines = [
+        'Olá! Gostaria de vender meu relógio.',
+        '',
+        `Nome: ${nome}`,
+        `Telefone: ${telefone}`,
+        `Marca: ${marca}`,
+        modelo ? `Modelo: ${modelo}` : null,
+        `Estado de conservação: ${estado}`,
+        `Acompanha: ${acompanha}`,
+        valor ? `Valor pretendido: ${valor}` : null,
+        `Sobre o relógio: ${observacoes}`,
+      ].filter(Boolean);
+
+      const message = encodeURIComponent(lines.join('\n'));
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank', 'noopener');
+    });
+  }
 });

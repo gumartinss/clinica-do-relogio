@@ -284,6 +284,7 @@ section:last-of-type { border-bottom: none; }
 }
 
 .service-card {
+  display: block;
   background: var(--bg);
   padding: 46px 34px;
   transition: background 0.3s ease;
@@ -293,6 +294,13 @@ section:last-of-type { border-bottom: none; }
 .service-card .icon { width: 40px; height: 40px; color: var(--gold); margin-bottom: 26px; }
 .service-card h3 { font-size: 21px; margin-bottom: 12px; font-weight: 600; }
 .service-card p { color: var(--text-muted); font-size: 14.5px; }
+.service-card .card-link {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--gold);
+}
 
 /* Heritage / tower section */
 .heritage {
