@@ -76,6 +76,10 @@ img, svg { display: block; max-width: 100%; }
   border-bottom: 1px solid var(--line);
 }
 
+.site-header .container {
+  max-width: 1320px;
+}
+
 .site-header .inner {
   display: flex;
   align-items: center;
@@ -98,12 +102,12 @@ img, svg { display: block; max-width: 100%; }
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 34px;
 }
 
 .main-nav a {
-  font-size: 12px;
-  letter-spacing: 0.09em;
+  font-size: 13px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--text-muted);
   position: relative;
@@ -128,7 +132,7 @@ img, svg { display: block; max-width: 100%; }
 .header-cta {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
 }
 
 .phone-line {
@@ -686,6 +690,13 @@ section:last-of-type { border-bottom: none; }
 
 @media (max-width: 1440px) {
   .phone-line { display: none; }
+}
+
+@media (max-width: 1300px) {
+  .main-nav { gap: 20px; }
+  .main-nav a { font-size: 11.5px; letter-spacing: 0.05em; }
+  .header-cta { gap: 12px; }
+  .btn.solid { padding: 12px 20px; }
 }
 
 @media (max-width: 1024px) {
