@@ -1,0 +1,37 @@
+/* Clínica do Relógio — Tema claro (esboço)
+   Mesma base do tema escuro; fundo em tons de creme, com o verde-oliva
+   da marca assumindo o papel de cor de destaque no lugar do dourado. */
+
+@import url('style.css');
+
+:root {
+  --bg: #f8f3e5;
+  --bg-alt: #efe6cd;
+  --bg-card: #fffdf6;
+  --line: #ddd2ae;
+  --gold: #4d5b34;
+  --gold-soft: #6f7c4c;
+  --text: #2b2e1f;
+  --text-muted: #6f6b53;
+  --shadow: 0 20px 50px rgba(60, 55, 20, 0.10);
+}
+
+.site-header {
+  background: rgba(248, 243, 229, 0.86);
+}
+
+.hero::before {
+  background:
+    radial-gradient(ellipse at 75% 20%, rgba(77,91,52,0.08), transparent 55%),
+    linear-gradient(180deg, #f8f3e5 0%, #efe6cd 100%);
+}
+
+.page-hero {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(77,91,52,0.07), transparent 60%),
+    var(--bg);
+}
+
+.map-frame {
+  filter: grayscale(0.2) contrast(0.97) brightness(1.02);
+}
