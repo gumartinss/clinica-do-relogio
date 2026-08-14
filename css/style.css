@@ -576,51 +576,53 @@ section:last-of-type { border-bottom: none; }
 .float-whatsapp:hover { transform: translateY(-3px); background: var(--gold-soft); }
 .float-whatsapp svg { width: 18px; height: 18px; }
 
-/* Service detail blocks (Serviços page) */
-.service-detail-list {
+/* Photo service cards (Serviços page) */
+.photo-services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+}
+.photo-service-card {
   display: flex;
   flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  transition: border-color 0.25s ease;
 }
-.service-detail {
-  display: grid;
-  grid-template-columns: 90px 1fr;
-  gap: 36px;
-  padding: 48px 0;
-  border-top: 1px solid var(--line);
+.photo-service-card:hover { border-color: var(--gold); }
+.photo-service-card .psc-img {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
 }
-.service-detail:first-child { border-top: none; padding-top: 0; }
-.sd-icon { width: 52px; height: 52px; color: var(--gold); }
-.sd-icon svg { width: 100%; height: 100%; }
-.sd-copy h3 { font-size: 26px; margin-bottom: 14px; }
-.sd-copy > p { color: var(--text-muted); font-size: 16px; margin-bottom: 20px; max-width: 640px; }
-.sd-copy ul {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px 28px;
-  margin-bottom: 22px;
-  max-width: 640px;
+.photo-service-card .psc-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
 }
-.sd-copy li {
-  font-size: 14px;
+.photo-service-card:hover .psc-img img { transform: scale(1.06); }
+.photo-service-card .psc-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 24px 22px 26px;
+}
+.photo-service-card h3 { font-size: 19px; margin-bottom: 10px; line-height: 1.25; }
+.photo-service-card p { color: var(--text-muted); font-size: 13.5px; margin-bottom: 16px; flex: 1; }
+.photo-service-card .card-link { margin-top: auto; }
+
+.photo-credit {
+  font-size: 11px;
   color: var(--text-muted);
-  padding-left: 18px;
-  position: relative;
-}
-.sd-copy li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 9px;
-  width: 8px;
-  height: 1px;
-  background: var(--gold);
+  letter-spacing: 0.02em;
 }
 
+@media (max-width: 980px) {
+  .photo-services-grid { grid-template-columns: repeat(2, 1fr); }
+}
 @media (max-width: 640px) {
-  .service-detail { grid-template-columns: 1fr; gap: 16px; }
-  .sd-copy ul { grid-template-columns: 1fr; }
+  .photo-services-grid { grid-template-columns: 1fr; }
 }
 
 /* Page hero (interior pages) */
