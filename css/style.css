@@ -612,12 +612,6 @@ section:last-of-type { border-bottom: none; }
 .photo-service-card p { color: var(--text-muted); font-size: 13.5px; margin-bottom: 16px; flex: 1; }
 .photo-service-card .card-link { margin-top: auto; }
 
-.photo-credit {
-  font-size: 11px;
-  color: var(--text-muted);
-  letter-spacing: 0.02em;
-}
-
 @media (max-width: 980px) {
   .photo-services-grid { grid-template-columns: repeat(2, 1fr); }
 }
